@@ -1,6 +1,14 @@
 import sqlite3
+from abc import ABC, abstractmethod
 
+class Authentication(ABC):
+    @abstractmethod
+    def register(self, name, email, password, role):
+        pass
 
+    @abstractmethod
+    def login(self, email, password, role):
+        pass
 
 class LibraryDatabase:
     def __init__(self):
